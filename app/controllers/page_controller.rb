@@ -1,5 +1,6 @@
 class PageController < ApplicationController
   def home
+    @carts = Cart.all
   end
 
   def cart

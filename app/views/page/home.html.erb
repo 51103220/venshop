@@ -1,3 +1,13 @@
 <% provide(:title, 'home') %>
-<h1>Page#home</h1>
-<p>Find me in app/views/page/home.html.erb</p>
+<div class="container">
+  <div class="row">
+     <div class="col-sm-4 col-xs-4 col-md-4 col-lg-4">
+        <ul>
+          <% @carts.each do |cart| %>
+  	     <li><%=link_to cart.name, cart %></li>
+          <% end %>
+        </ul>
+     
+     </div>
+  </div>
+</div>
