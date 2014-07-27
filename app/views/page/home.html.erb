@@ -1,7 +1,7 @@
 <% provide(:title, 'home') %>
 <div class="container">
   <div class="row">
-     <div class="col-sm-4 col-xs-4 col-md-4 col-lg-4">
+     <div class="span3">
         <ul>
           <% @carts.each do |cart| %>
   	     <li><%=link_to cart.name, cart %></li>
@@ -9,5 +9,24 @@
         </ul>
      
      </div>
+     <div class="span6 offset1">
+        <ul>
+          <% @carts.each do |cart| %>
+              <% if cart.products.any? %>
+                <% products = cart.products %> 
+                  <%products.each do |p| %>
+  	              <li><%= link_to p, id: "logo-p" do %>
+                      <img src="<%=p.img%>" alt="img"  width="150" height="150">
+                     <%= p.name %>
+
+                   <% end %>
+</li>
+                  <% end %>
+              <% end %>
+          <% end %>
+        </ul>
+     
+     </div>
+
   </div>
 </div>

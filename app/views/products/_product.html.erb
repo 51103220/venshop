@@ -1,2 +1,5 @@
-<%= product.name %>, <%= product.desc %>,<%= product.price %>
-<img src="<%=product.img%>" alt="img" width="150" height="150">
+<%= link_to product, id: "logo-p" do %>
+  <img src="<%=product.img%>" alt="img" width="150" height="150">
+  <%= product.name %>
+
+<% end %>
