@@ -16,6 +16,9 @@ Rails.application.routes.draw do
 
   resources :carts
   get 'carts/show'
+   
+  resources :products
+  get 'products/show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
