@@ -20,8 +20,10 @@ Rails.application.routes.draw do
   resources :products
   get 'products/show'
   
- resources :bsessions, only: [:new, :create, :destroy]
+  resources :bsessions, only: [:new, :create]
+  resources :email, only: [:new, :create, :destroy]
 
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
