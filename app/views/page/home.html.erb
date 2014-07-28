@@ -17,10 +17,19 @@
                   <%products.each do |p| %>
   	              <li><%= link_to p, id: "logo-p" do %>
                       <img src="<%=p.img%>" alt="img"  width="150" height="150">
-                     <%= p.name %>
+                     
 
                    <% end %>
-</li>
+           <%=form_for(:bsession, url: bsessions_path) do |f| %>
+                 
+                 <%= f.hidden_field :name, :value => p.name%>
+                 <%= f.hidden_field :price, :value => p.price%>
+                 <%= f.hidden_field :desc, :value => p.desc%>
+                 <%= f.hidden_field :img, :value => p.img%>
+                 <%= p.name%> - <%= p.price%>  <br>
+                    <%= f.submit "Buy", class: "btn btn-large btn-primary" %>  
+           <% end %>   
+                   </li>
                   <% end %>
               <% end %>
           <% end %>
