@@ -1,3 +1,6 @@
+<div class="container">
+<div class="row" >
+<div class="span6">
 <ul>
 <% for item in @bcart.line_items %>
 <li><%= item.product.name %>-<%="Quantity: #{item.quantity}"%>-<%= item.total_price%>$ --- <%= link_to 'delete', item, :method => :delete,
@@ -10,5 +13,22 @@
 <h2>TOTAL: <%=@bcart.total_price%>$ </h2>
 <br>
 <br>
-<%= button_to 'CANCEL CART', @bcart, :method => :delete,
+<%= button_to 'REMOVE CART', @bcart, :method => :delete,
 :confirm => 'Are you sure?' %>
+</div>
+<div class = "span3 offset1">
+     <% b = "WELCOME TO DEDO VENSHOP\n 
+             YOUR ORDER CONTAINS : \n" %>
+    <% for item in @bcart.line_items %>
+       <% b = b + item.product.name+ " -- " + item.quantity.to_s + "\n" %>
+    <% end %>
+    <% b = b + "TOTAL: " + @bcart.total_price.to_s %>
+    <%= form_for(:order, url: order_index_path) do |f| %>
+       <%= f.hidden_field :body, :value => b%>
+
+     <%= f.submit "CONFIRM", class: "btn btn-large btn-primary"    %>
+    <% end %>
+
+</div>
+</div>
+</div>

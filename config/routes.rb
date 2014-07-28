@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'order/new'
+
   resources :line_items
 
   resources :bcarts
@@ -29,6 +31,7 @@ Rails.application.routes.draw do
   resources :bcarts, only: [:new, :create, :destroy, :show]
   get 'bcarts/show'
   match '/bcart' ,to: 'bcarts#show', via: 'get'
+  resources :order, only: [:new, :create, :destroy]
 
   
   
