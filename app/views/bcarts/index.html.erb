@@ -1,0 +1,23 @@
+<h1>Listing bcarts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bcarts.each do |bcart| %>
+      <tr>
+        <td><%= link_to 'Show', bcart %></td>
+        <td><%= link_to 'Edit', edit_bcart_path(bcart) %></td>
+        <td><%= link_to 'Destroy', bcart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bcart', new_bcart_path %>

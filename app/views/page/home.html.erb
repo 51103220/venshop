@@ -28,7 +28,8 @@
                  <%= f.hidden_field :img, :value => p.img%>
                  <%= p.name%> - <%= p.price%>$  <br>
                     <%= f.submit "Buy", class: "btn btn-large btn-primary" %>  
-           <% end %>   
+           <% end %>
+                 <%= button_to 'Add to Cart', line_items_path(:product_id => p)%>   
                    </li>
                   <% end %>
               <% end %>

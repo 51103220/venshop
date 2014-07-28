@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :line_items
+
+  resources :bcarts
+
   get 'users/new'
 
   get 'page/home'
@@ -22,7 +26,11 @@ Rails.application.routes.draw do
   
   resources :bsessions, only: [:new, :create]
   resources :email, only: [:new, :create, :destroy]
+  resources :bcarts, only: [:new, :create, :destroy, :show]
+  get 'bcarts/show'
+  match '/bcart' ,to: 'bcarts#show', via: 'get'
 
+  
   
 
   # The priority is based upon order of creation: first created -> highest priority.

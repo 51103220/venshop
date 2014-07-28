@@ -1,2 +1,11 @@
 <%= @product.name %>, <%= @product.desc %>,<%= @product.price %>
 <img src="<%=@product.img%>" alt="eminem" width="150" height="150">
+<%=form_for(:bsession, url: bsessions_path) do |f| %>
+                 
+                 <%= f.hidden_field :name, :value => @product.name%>
+                 <%= f.hidden_field :price, :value => @product.price%>
+                 <%= f.hidden_field :desc, :value => @product.desc%>
+                 <%= f.hidden_field :img, :value => @product.img%>
+                 
+                    <%= f.submit "Buy", class: "btn btn-large btn-primary" %>  
+           <% end %>   
