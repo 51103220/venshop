@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   get 'bcarts/show'
   match '/bcart' ,to: 'bcarts#show', via: 'get'
   resources :order, only: [:new, :create, :destroy]
-
+  
   
   
 
