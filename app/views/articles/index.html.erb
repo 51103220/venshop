@@ -1,0 +1,11 @@
+<% @articles.each do |article| %>
+  <div class="article">
+    <h1 class="article-title"><%=article.name %></h1>
+  <li><%= link_to article, id: "logo-p" do %>
+                      <img src="<%=article.img%>" alt="img"  width="500" height="500">
+                     
+
+ <% end %>
+
+
+<% end %>

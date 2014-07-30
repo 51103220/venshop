@@ -8,7 +8,7 @@ body {
 }
 body {
   background-color: #fff;
-  background-image: url(http://www.genovic.com/thumbs/2013/02/5/hd-wallpapers-1080p-space-hd-wallpapers.jpg);
+  background-image: url(http://cnjtc.com/wp-content/uploads/2013/03/creative-green-house-www.wallbest.com_.jpg);
   background-repeat:no-repeat;
   background-attachment:fixed;
   color: #fff;
@@ -27,6 +27,20 @@ background-attachment: scroll;
 background-origin: initial;
 background-clip: initial;
 background-color: initial;
+}
+#d-header {
+
+  background-image: url(http://nhackhongloi.org/images/container-bg.png);
+background-position-x: 0px;
+background-position-y: 0px;
+background-size: initial;
+background-repeat-x: repeat;
+background-repeat-y: repeat;
+background-attachment: scroll;
+background-origin: initial;
+background-clip: initial;
+background-color: initial;
+
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -150,4 +164,183 @@ input {
 ul
 {
 list-style-type: none;
+}
+
+.search_wapper_input {
+	
+		width:180px !important;
+	}
+	
+	.search_wapper_a .button_search {
+			}
+	
+		
+	.search_wapper_a {
+		padding-top:4px;
+	}
+.search_wapper_a .button_search {
+	background-image: url(http://static-hn.24hstatic.com:8008/images/2014/iconSearch.png);
+background-position-x: initial;
+background-position-y: initial;
+background-size: initial;
+background-repeat-x: no-repeat;
+background-repeat-y: no-repeat;
+background-attachment: initial;
+background-origin: initial;
+background-clip: initial;
+background-color: transparent;
+	width:35px;
+	height:25px;
+	border:none;
+      margin-top: 5.5%;
+	margin-left: -15%;
+	
+	box-shadow:none;
+}
+
+.search_wapper_a {
+	position:relative;
+	width:200px;
+        
+}
+.search_wapper_a {
+   margin-bottom:3%;
+   width:200px;
+   left:-12%;
+}
+input[type="text"],input[type="password"]  {
+background-color :transparent;
+border: 1px solid #719C1;
+}
+#search {
+margin-left: -30%;
+width:200px;
+}
+.pagination {
+ margin-left:18%;
+}
+.pagination ul > li > a {
+  color:#0CBD8B;
+  background-color:transparent;
+}
+.pagination ul > .active > a, .pagination ul > .active > span {
+color:#FFFFF;
+background-color: transparent;
+}
+.d-list li > a {
+float:left;
+}
+.d-list li > form > .btn {
+margin-left: 30%;
+margin-top:0%;
+}  
+.d-list li> form >h2 {
+ color:#fff;
+text-transform:uppercase;
+margin-bottom: 20px;
+ 
+}
+.d-list li> form >h6 >a,.d-list li> form >h6{
+ text-align:center;
+ color:#0CBD8B;
+}
+.d-list li> form >h6  {
+ margin-top: 5px;
+margin-right: 0px;
+margin-bottom: 5px;
+margin-left: 0px;
+}
+.d-list li> form >h2{
+margin-bottom:10px;
+}
+input[type="submit"].home {
+  margin-left:25%;
+  margin-top: -5%;
+}
+input[type="submit"].bhome {
+  height:25px;
+  margin-top: -5%;
+
+}
+hr {
+margin-top: 10px;
+margin-right: 0px;
+margin-bottom: 10px;
+margin-left: 0px;
+}
+.d-ul {
+margin-left:18%;
+}
+.cart-list {
+margin-left:0px;
+}
+.cart-list > ul  {
+margin-left:5%;
+margin-top :7px;
+
+
+}
+.cart-list > .nav >li >a  {
+font-size:1.2em;
+font-weight: normal;
+text-align:center;
+    
+        font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+	letter-spacing:0.1em;
+	text-align:center;
+	margin: 4px auto;
+	#text-transform: lowercase;
+	line-height: 145%;
+	font-size: 14pt;
+	font-variant: small-caps;
+
+} 
+.cart-list > .nav >li >a:hover {
+  background-color:transparent;
+}  
+.cart-list > ul >li {
+margin: 0px 8px;
+} 
+.cart-list > marquee{
+margin-left: 10%;
+margin-top:6%;
+}
+
+.showh{
+width:620px;
+margin-left:0px;
+}
+
+.product-show > img{
+ margin-left:27%;
+}
+.product-show >h3,.product-show >h4 {
+text-align:center;
+}
+.product-show > form >.bt {
+margin-left:47%;
+}
+.product-show-add {
+margin-left:45%;
+}
+
+
+.bcart-show1{
+ margin-left:35%;
+}
+.bcart-show2{
+ margin-left:20%;
+ margin-top:5%;
+}
+
+
+.cart-user {
+ color:#fff;
+width:80px;
+}
+.showh {
+margin-left:0%;
+}
+#bcart {
+margin-top:1%;
 }

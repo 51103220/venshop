@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :articles
+
   get 'order/new'
 
   resources :line_items
@@ -6,11 +8,8 @@ Rails.application.routes.draw do
   resources :bcarts
 
   get 'users/new'
-
+get 'page/cart'
   get 'page/home'
-
-  get 'page/cart'
-
   get 'page/pay'
   
   root  'page#home'
@@ -25,7 +24,9 @@ Rails.application.routes.draw do
    
   resources :products
   get 'products/show'
-  
+  get 'products/new'
+  match '/add',  to: 'products#create',            via: 'post'
+   
   resources :bsessions, only: [:new, :create]
   resources :email, only: [:new, :create, :destroy]
   resources :bcarts, only: [:new, :create, :destroy, :show]

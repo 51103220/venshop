@@ -10,8 +10,18 @@ class BcartsController < ApplicationController
   # GET /bcarts/1
   # GET /bcarts/1.json
   def show
+  if session[:bcart_id] != nil
   @bcart = Bcart.find(session[:bcart_id])
-
+  else
+  redirect_to root_url, :notice => 'Invalid cart or your cart is   empty'
+  end
+  begin
+  #@bcart = Bcart.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+  logger.error "invalid cart #{params[:id]}"
+  redirect_to root_url, :notice => 'Invalid cart or your cart is   empty'
+  
+  end
   end
 
   # GET /bcarts/new

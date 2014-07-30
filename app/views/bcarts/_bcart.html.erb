@@ -1,0 +1,8 @@
+<div class="cart_title">YOUR CART</div>
+<table>
+<%= render(bcart.line_items) %>
+<tr class="total_line">
+<td colspan="2">TOTAL</td>
+<td class="total_cell"><%= number_to_currency(bcart.total_price) %></td>
+</tr>
+</table>

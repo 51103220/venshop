@@ -1,5 +1,9 @@
-<%= @product.name %>, <%= @product.desc %>,<%= @product.price %>
-<img src="<%=@product.img%>" alt="eminem" width="150" height="150">
+<div class="row">
+<div class="span12 product-show">
+<img src="<%=@product.img%>" alt="eminem" width="450" height="250">
+<h1><%= @product.name %></h1> 
+<h3><%= @product.desc %></h3>
+<h4><%=number_to_currency(@product.price)%></h4>
 <%=form_for(:bsession, url: bsessions_path) do |f| %>
                  
                  <%= f.hidden_field :name, :value => @product.name%>
@@ -7,5 +11,8 @@
                  <%= f.hidden_field :desc, :value => @product.desc%>
                  <%= f.hidden_field :img, :value => @product.img%>
                  
-                    <%= f.submit "Buy", class: "btn btn-large btn-primary" %>  
-           <% end %>   
+                    <%= f.submit "Buy", class: "btn  btn-primary bt" %>  
+           <% end %>
+<%= button_to 'Add to Cart',line_items_path(:product_id => @product),:remote => true,class: "btn btn-danger product-show-add"%> 
+</div>   
+</div>

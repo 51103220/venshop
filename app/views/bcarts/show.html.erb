@@ -1,22 +1,23 @@
 <div class="container">
 <div class="row" >
-<div class="span6">
+<div class="span6 ">
 <ul>
 <% for item in @bcart.line_items %>
-<li><%= item.product.name %>-<%="Quantity: #{item.quantity}"%>-<%= item.total_price%>$ --- <%= link_to 'delete', item, :method => :delete,
-:confirm => 'Are you sure?' %>
+<li><%= item.product.name %>-<%="Quantity: #{item.quantity}"%>-<%= number_to_currency(item.total_price)%>---<%=link_to "details", item.product%> 
+<%= button_to 'delete', item, :method => :delete,class: "btn btn-default",:confirm => 'Are you sure?' %>
 
 </li>
 <% end %>
 </ul>
 
-<h2>TOTAL: <%=@bcart.total_price%>$ </h2>
+<h2>TOTAL: <%=number_to_currency(@bcart.total_price)%></h2>
 <br>
 <br>
-<%= button_to 'REMOVE CART', @bcart, :method => :delete,
+<%= button_to 'REMOVE CART', @bcart,class: "btn btn-danger bcart-show1", :method => :delete,
 :confirm => 'Are you sure?' %>
 </div>
-<div class = "span3 offset1">
+<div class = "span6 ">
+  <h3>CONFIRM YOU CART ? </h3>
      <% b = "WELCOME TO DEDO VENSHOP\n 
              YOUR ORDER CONTAINS : \n" %>
     <% for item in @bcart.line_items %>
@@ -26,7 +27,7 @@
     <%= form_for(:order, url: order_index_path) do |f| %>
        <%= f.hidden_field :body, :value => b%>
 
-     <%= f.submit "CONFIRM", class: "btn btn-large btn-primary"    %>
+     <%= f.submit "CONFIRM", class: "btn btn-large btn-primary bcart-show2"    %>
     <% end %>
 
 </div>

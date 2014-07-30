@@ -1,12 +1,12 @@
-<%= @cart.name %>, <%= @cart.code %>
+<h1><%= @cart.name %></h1>
 <div class="container">
   <div class="row">
-     <div class="col-xs-12 col-md-12 col-lg-12 col-sm-12">
+     <div class="span12">
          <% if @cart.products.any? %>
      	     
-        <ol>
-        <%= render @products %>
-        </ol>
+        <ul class="cart-ul">
+        <li><%= render @products %></li>
+        </ul>
         
     <% end %>
      </div>

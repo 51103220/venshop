@@ -1,42 +1,70 @@
 <% provide(:title, 'home') %>
 <div class="container">
   <div class="row">
-     <div class="span3">
-        <ul>
+     <div class="span3 cart-list">
+       <marquee width="85%" behavior="scroll" scrollamount="5" direction="left">
+       <%= link_to '#', id: "logo-pp" do %>
+<img src="http://taochu.com/gen/gimg/27/m.gif" border="0" width="40" height="40" >
+                 <% end %>
+<%= link_to '#', id: "logo-p" do %>
+<img src="http://taochu.com/gen/gimg/27/e.gif" border="0" width="40" height="40"  >
+                 <% end %>
+<%= link_to '#', id: "logo-p" do %>
+<img src="http://taochu.com/gen/gimg/27/n.gif" border="0" width="40" height="40" >
+                 <% end %>
+<%= link_to '#', id: "logo-p" do %>
+<img src="http://taochu.com/gen/gimg/27/u.gif" border="0" width="40" height="40" >
+                 <% end %>
+</marquee>
+
+        <ul class="nav nav-pills nav-stacked" role="tablist">
           <% @carts.each do |cart| %>
-  	     <li><%=link_to cart.name, cart %></li>
+            
+            <li><%=link_to cart.name, cart %></li>
+           
           <% end %>
         </ul>
      
      </div>
-     <div class="span6 offset1">
-        <ul>
+    <div id='bcart' class="span3 cart-user">
+     <%= render @bcart %>
+     <br>
+     <%= link_to @bcart, id: "logo-p" do %>
+                      <img src="http://images.wikia.com/fallout/images/archive/8/80/20110327072617!FO3_Shopping_Cart.png" alt="img"  width="350" height="350">
+                 <% end %>
+
+    </div>
+
+     <div class="span6  showh">
+        <ul class="d-ul">
           <% @carts.each do |cart| %>
               <% if cart.products.any? %>
                 <% products = cart.products %> 
-                  <%products.each do |p| %>
+                  <%@lp.each do |p| %>
+                   <div class="d-list">
   	              <li><%= link_to p, id: "logo-p" do %>
                       <img src="<%=p.img%>" alt="img"  width="150" height="150">
-                     
-
-                   <% end %>
+                 <% end %>
            <%=form_for(:bsession, url: bsessions_path) do |f| %>
                  
                  <%= f.hidden_field :name, :value => p.name%>
                  <%= f.hidden_field :price, :value => p.price%>
                  <%= f.hidden_field :desc, :value => p.desc%>
                  <%= f.hidden_field :img, :value => p.img%>
-                 <%= p.name%> - <%= p.price%>$  <br>
-                    <%= f.submit "Buy", class: "btn btn-large btn-primary" %>  
+                 <h2><%= p.name%> <br> <br> <%=number_to_currency(p.price)%></br></h2>     
+  <h6><%=link_to "details", p %> </h6>
+                    <%= f.submit "Buy", class: "btn  btn-default
+ bhome" %>  
            <% end %>
-                 <%= button_to 'Add to Cart', line_items_path(:product_id => p)%>   
+<%= button_to 'Add to Cart',line_items_path(:product_id => p),:remote => true,class: "btn btn-danger home"%> 
                    </li>
+               </div>
                   <% end %>
               <% end %>
           <% end %>
         </ul>
-     
-     </div>
+<%= will_paginate @lp%>
+        </div>
 
   </div>
 </div>

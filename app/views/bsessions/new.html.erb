@@ -6,7 +6,7 @@
   <img src="<%=@img%>" alt="img" width="250" height="250">
   <h1><%=@name%></h1>
   <h3><%=@desc%></h3>
-  <h3>Total: <%=@price%> $ </h3>  
+  <h3>Total: <%=number_to_currency(@price)%></h3>  
 
 
   <%= link_to "BACK", root_path %>

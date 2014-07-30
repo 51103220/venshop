@@ -3,6 +3,6 @@ class OrderController < ApplicationController
   end
   def create
       @body = params[:order][:body]
-      render 'new'
+            render 'new'
   end
 end
