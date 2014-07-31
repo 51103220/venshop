@@ -1,4 +1,8 @@
 class Product < ActiveRecord::Base
+      validates :name,presence: true
+      validates :price,presence: true
+      validates :cart_id,presence: true
+      validates :desc,presence: true
  	belongs_to :cart
      has_many :line_items
  

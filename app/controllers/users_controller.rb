@@ -15,6 +15,7 @@ class UsersController < ApplicationController
       flash[:success] = "Profile updated"
       redirect_to @user
     else
+      
       render 'edit'
     end
   end
@@ -22,7 +23,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
      sign_in @user
-    	flash[:success] = "Welcome to DEDO VENSHOP"
+    	flash[:success] = "Welcome #{@user.name} to DEDO VENSHOP"
       
       redirect_to @user
     else

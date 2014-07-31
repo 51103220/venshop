@@ -37,7 +37,7 @@
                 <li><%= link_to "Upload", products_new_path %>                  </li>
 
                 <li><%= link_to "Profile", current_user %></li>
-                  <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+                  <li><%= button_to "Sign out", signout_path, method: "delete",class:"error-btn" %></li>
         
              <% else %>
                <li><%= link_to "Sign in", signin_path %></li>

@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionsHelper
   $supercarts = Cart.all 
+  $check
+
   private
 	def current_bcart
 	Bcart.find(session[:bcart_id])

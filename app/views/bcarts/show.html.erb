@@ -20,10 +20,15 @@
   <h4>CONFIRM YOU CART?</h4>
      <% b = "WELCOME TO DEDO VENSHOP\n 
              YOUR ORDER CONTAINS : \n" %>
+    <% if @bcart.line_items.count == 0%>
+      <% $check = false %>
+      <%else%>
+      <% $check = true%>
+    <% end%>
     <% for item in @bcart.line_items %>
        <% b = b + item.product.name+ " -- " + item.quantity.to_s + "\n" %>
     <% end %>
-    <% b = b + "TOTAL: " + @bcart.total_price.to_s %>
+    <% b = b + "TOTAL: " + @bcart.total_price.to_s+ "$" %>
     <%= form_for(:order, url: order_index_path) do |f| %>
        <%= f.hidden_field :body, :value => b%>
 

@@ -21,7 +21,7 @@
                  <%= f.hidden_field :desc, :value => @product.desc%>
                  <%= f.hidden_field :img, :value => @product.img%>
                  
-                    <%= f.submit "Buy", class: "btn  btn-primary bt" %>  
+                    <%= f.submit "Buy", class: "btn  btn-default bt" %>  
            <% end %>
 <%= button_to 'Add to Cart',line_items_path(:product_id => @product),:remote => true,class: "btn btn-danger product-show-add"%> 
 </div>   

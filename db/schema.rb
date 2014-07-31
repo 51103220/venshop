@@ -50,8 +50,6 @@ ActiveRecord::Schema.define(version: 20140728153855) do
     t.datetime "updated_at"
   end
 
-  add_index "products", ["cart_id", "created_at"], name: "index_products_on_cart_id_and_created_at", using: :btree
-
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"

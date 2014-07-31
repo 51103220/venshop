@@ -2,7 +2,13 @@ class OrderController < ApplicationController
   def new
   end
   def create
-      @body = params[:order][:body]
+      if $check == true
+           @body = params[:order][:body]
             render 'new'
+      else 
+        flash[:error] = "Nothing in your card , dont make an useless email"
+        redirect_to :back    
+       
+      end
   end
 end
