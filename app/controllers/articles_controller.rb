@@ -5,7 +5,12 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
      if params[:search]
-      @articles = Product.search(params[:search]).order("created_at DESC")
+      #@articles = Product.search(params[:search]).order("created_at DESC")
+      search =Product.search{
+        fulltext params[:search]
+        paginate :page => params[:page].present? ? params[:page] :1 , :per_page => 5
+      }
+     @articles = search.results
     else
       @articles = Product.order("created_at DESC")
     end

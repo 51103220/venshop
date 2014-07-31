@@ -44,3 +44,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
+gem 'sunspot_rails'
+group :development do
+    gem 'sunspot_solr'
+end
+gem 'progress_bar'
