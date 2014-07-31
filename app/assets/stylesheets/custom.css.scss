@@ -227,6 +227,13 @@ width:200px;
 color:#FFFFF;
 background-color: transparent;
 }
+
+.d-list li > a >img {
+height:152px;
+}
+.d-list {
+  overflow: hidden;
+}
 .d-list li > a {
 float:left;
 }
@@ -240,9 +247,15 @@ text-transform:uppercase;
 margin-bottom: 20px;
  
 }
+.d-list li> form > .dh2 {
+  overflow: hidden;
+  text-overflow: ellipsis; /* this works with IE, Safari and Chrome */
+  white-space: nowrap;
+  -moz-binding: url('/ellipsis.xml#ellipsis'); /* this is a Firefox hack */
+}
 .d-list li> form >h6 >a,.d-list li> form >h6{
  text-align:center;
- color:#0CBD8B;
+ color:#C4F785;
 }
 .d-list li> form >h6  {
  margin-top: 5px;
@@ -273,9 +286,22 @@ margin-left:18%;
 }
 .cart-list {
 margin-left:0px;
+
+
+  background-image: url(http://nhackhongloi.org/images/container-bg.png);
+background-position-x: 0px;
+background-position-y: 0px;
+background-size: initial;
+background-repeat-x: repeat;
+background-repeat-y: repeat;
+background-attachment: scroll;
+background-origin: initial;
+background-clip: initial;
+background-color: initial;
+
 }
 .cart-list > ul  {
-margin-left:5%;
+margin-left:0%;
 margin-top :7px;
 
 
@@ -283,17 +309,6 @@ margin-top :7px;
 .cart-list > .nav >li >a  {
 font-size:1.2em;
 font-weight: normal;
-text-align:center;
-    
-        font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
-	letter-spacing:0.1em;
-	text-align:center;
-	margin: 4px auto;
-	#text-transform: lowercase;
-	line-height: 145%;
-	font-size: 14pt;
-	font-variant: small-caps;
-
 } 
 .cart-list > .nav >li >a:hover {
   background-color:transparent;
@@ -302,9 +317,19 @@ text-align:center;
 margin: 0px 8px;
 } 
 .cart-list > marquee{
-margin-left: 10%;
+
 margin-top:6%;
 }
+
+.cart-list >.nav-tabs.nav-stacked > li > a {
+color:#C4F785;
+border-top: 1px dotted #595;
+border-bottom: 1px dotted #595;
+border-left: 1px dotted #595;
+border-right: 1px dotted #595;
+
+}
+
 
 .showh{
 width:620px;
@@ -312,16 +337,22 @@ margin-left:0px;
 }
 
 .product-show > img{
- margin-left:27%;
+ margin-top:5%;
+ margin-left:56%;
 }
-.product-show >h3,.product-show >h4 {
-text-align:center;
+.product-show >h3{
+
+margin-left:55%;
 }
+.product-show >h4{
+margin-left:65%;
+}
+
 .product-show > form >.bt {
-margin-left:47%;
+margin-left:55%;
 }
 .product-show-add {
-margin-left:45%;
+margin-left:53%;
 }
 
 
@@ -335,7 +366,7 @@ margin-left:45%;
 
 
 .cart-user {
- color:#fff;
+ color:#C4F785;
 width:80px;
 }
 .showh {
@@ -343,4 +374,34 @@ margin-left:0%;
 }
 #bcart {
 margin-top:1%;
+
+}
+#bcart, #bcart table {
+font-size: smaller;
+
+}
+#bcart table {
+border-top: 1px dotted #595;
+border-bottom: 1px dotted #595;
+
+margin-bottom: 10px;
+}
+.cart-ul{
+display:inline-block;
+}
+.navbar-inverse .brand, .navbar-inverse .nav > li > a{
+color:#fff;
+}
+input[type="text"], input[type="password"]{
+border: 1px dotted #595;
+color:#fff;
+
+}
+.hero-unit {
+
+background-image: url(http://dc443.4shared.com/img/a0g7B8S5/s7/1335932a090/color-splat-psd38846.png);
+background-color:transparent;
+}
+.hero-unit h1{
+margin-bottom:30px;
 }

@@ -1,8 +1,18 @@
 <div class="row">
-<div class="span12 product-show">
-<img src="<%=@product.img%>" alt="eminem" width="450" height="250">
-<h1><%= @product.name %></h1> 
-<h3><%= @product.desc %></h3>
+
+    <div id='bcart' class="span4 cart-user">
+     <%= render @bcart %>
+     <br>
+     <%= link_to @bcart, id: "logo-p" do %>
+                      <img src="http://www.graphicsbeam.com/wp-content/uploads/2012/04/Shopping-Cart-Icon-with-PSD-and-PNG-Format.png" alt="img"  width="350" height="350">
+                 <% end %>
+
+    </div>
+
+<div class="span6 product-show">
+<img src="<%=@product.img%>" alt="eminem" width="250" height="250">
+<h3><%= @product.name %></h3> 
+<h4><%= @product.desc %></h4>
 <h4><%=number_to_currency(@product.price)%></h4>
 <%=form_for(:bsession, url: bsessions_path) do |f| %>
                  

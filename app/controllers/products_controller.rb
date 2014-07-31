@@ -4,6 +4,8 @@ class ProductsController < ApplicationController
   end
   def show
      @product = Product.find(params[:id])
+     @bcart = current_bcart
+
   end
   def create
      @product = Product.new(product_params)

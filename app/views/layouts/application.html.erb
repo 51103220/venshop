@@ -45,13 +45,58 @@
         </div>
       </div>
 </header>
-<div id="d-main" class="container">
-    <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
-      <% end %>
-     <%= yield %>
+<div class="center hero-unit">
+  <h1>Welcome to Dedo Venshop</h1>
+
+
+ </div>
+
+
+<div class="container">
+<div class="row">
+   <div class="span3">
+     <div class="cart-list">
+       <marquee width="100%" behavior="scroll" scrollamount="5" direction="left">
+       <%= link_to '#', id: "logo-pp" do %>
+<img src="http://taochu.com/gen/gimg/27/m.gif" border="0" width="40" height="40" >
+                 <% end %>
+<%= link_to '#', id: "logo-p" do %>
+<img src="http://taochu.com/gen/gimg/27/e.gif" border="0" width="40" height="40"  >
+                 <% end %>
+<%= link_to '#', id: "logo-p" do %>
+<img src="http://taochu.com/gen/gimg/27/n.gif" border="0" width="40" height="40" >
+                 <% end %>
+<%= link_to '#', id: "logo-p" do %>
+<img src="http://taochu.com/gen/gimg/27/u.gif" border="0" width="40" height="40" >
+                 <% end %>
+</marquee>
+
+        <ul class="nav nav-tabs nav-stacked" role="tablist">        
+                
+          <% $carts.each do |cart| %>
+            
+            <li><%=link_to cart.name, cart %></li>
+           
+          <% end %>
+
+      </ul>
+      <br>
      
-     <%= render 'layouts/footer' %>
+     </div>
+
+   </div>
+   <div class="span9">
+     <div id="d-main">
+        <% flash.each do |key, value| %>
+          <div class="alert alert-<%= key %>"><%= value %></div>
+        <% end %>
+        <%= yield %>
+     
+        <%= render 'layouts/footer' %>
+   
+     </div>
+   </div>
+</div>
 </div>
 
 </body>

@@ -16,8 +16,8 @@
 <%= button_to 'REMOVE CART', @bcart,class: "btn btn-danger bcart-show1", :method => :delete,
 :confirm => 'Are you sure?' %>
 </div>
-<div class = "span6 ">
-  <h3>CONFIRM YOU CART ? </h3>
+<div class = "span3 ">
+  <h4>CONFIRM YOU CART?</h4>
      <% b = "WELCOME TO DEDO VENSHOP\n 
              YOUR ORDER CONTAINS : \n" %>
     <% for item in @bcart.line_items %>
