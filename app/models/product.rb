@@ -1,7 +1,7 @@
 class Product < ActiveRecord::Base
  	belongs_to :cart
      has_many :line_items
-  sefl.per_page = 5
+ 
 
   searchable do
   text :name,:desc
