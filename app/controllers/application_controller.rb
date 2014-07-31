@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   include SessionsHelper
-  $carts = Cart.all 
+  $supercarts = Cart.all 
   private
 	def current_bcart
 	Bcart.find(session[:bcart_id])

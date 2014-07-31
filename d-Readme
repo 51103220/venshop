@@ -1,0 +1,27 @@
+--To Use in Window
+1.Install sql-connector-c
+  Exract to C:/sql-connector
+  Type cmd   : gem install mysql2 --platform=ruby -- '--with-mysql-dir="C:\mysql-connector\"'
+  copy "libmysql.dll" from C:/sql-connector/lib to Ruby-[version]/bin
+2. add gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw] into gemfile
+3. Configure mysql C:/Programs/MySQL/MySQL Server/bin/MySQLInstanceConfig.exe
+-- So complicated-------
+
+
+
+---------------------------------------------------------------------------------------------
+AFTER CLONING PROJECT
+1. bundle install (for missing gems)
+2. rake db:migrate
+3. rake db:populate (automatically import datas into databse, 
+                     if you want to create new datas , you 
+                     may edit 'lib/task/sample-data.rake'
+                     for convenience 
+                 
+                     )
+
+
+---------------------------------------------------------------------------------------------
+
+
+NGUYEN TIEN THANH - 31/07/2014

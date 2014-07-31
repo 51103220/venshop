@@ -2,7 +2,10 @@
 <html>
 <head>
   <title><%= full_title(yield(:title)) %></title>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
   <%= javascript_include_tag "rails" %>
   
   <%= csrf_meta_tags %>
@@ -57,23 +60,18 @@
    <div class="span3">
      <div class="cart-list">
        <marquee width="100%" behavior="scroll" scrollamount="5" direction="left">
-       <%= link_to '#', id: "logo-pp" do %>
-<img src="http://taochu.com/gen/gimg/27/m.gif" border="0" width="40" height="40" >
+        <% $supercarts.each do |cart| %>
+          <%cart.products.each do |p| %>
+       <%= link_to p, id: "logo-pp" do %>
+<img src="<%=p.img%>" alt="img" border="0" width="40" height="40" >
                  <% end %>
-<%= link_to '#', id: "logo-p" do %>
-<img src="http://taochu.com/gen/gimg/27/e.gif" border="0" width="40" height="40"  >
-                 <% end %>
-<%= link_to '#', id: "logo-p" do %>
-<img src="http://taochu.com/gen/gimg/27/n.gif" border="0" width="40" height="40" >
-                 <% end %>
-<%= link_to '#', id: "logo-p" do %>
-<img src="http://taochu.com/gen/gimg/27/u.gif" border="0" width="40" height="40" >
-                 <% end %>
+          <%end%>
+        <%end%>         
 </marquee>
 
         <ul class="nav nav-tabs nav-stacked" role="tablist">        
                 
-          <% $carts.each do |cart| %>
+          <% $supercarts.each do |cart| %>
             
             <li><%=link_to cart.name, cart %></li>
            
